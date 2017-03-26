@@ -1,0 +1,6 @@
+.scm-footer {
+  padding: 1rem;
+  text-align: center;
+  z-index: 1000;
+  border-top: 1px solid darkgray;
+}

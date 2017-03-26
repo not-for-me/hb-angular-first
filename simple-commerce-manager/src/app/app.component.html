@@ -3,9 +3,15 @@
   <div class="row">
     <scm-sidebar (changedMenu)="currentMenu = $event"></scm-sidebar>
     <main class="col-10 offset-2 pt-3" [ngSwitch]=" currentMenu">
-      <div *ngSwitchCase="'product'">상품관리 뷰</div>
-      <div *ngSwitchCase="'category'">카테고리 뷰</div>
-      <div *ngSwitchDefault>기본 뷰</div>
+      <div *ngSwitchCase="'product'">
+        <scm-product-management></scm-product-management>
+      </div>
+      <div *ngSwitchCase="'category'">
+        <scm-category-management></scm-category-management>
+      </div>
+      <div *ngSwitchDefault>
+        <scm-main-dashboard></scm-main-dashboard>
+      </div>
     </main>
   </div>
 </div>

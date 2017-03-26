@@ -1,0 +1,11 @@
+<nav class="navbar navbar-toggleable fixed-top scm-navbar">
+  <a class="navbar-brand text-white" href="/">{{appTitle}}</a>
+  <div class="collapse navbar-collapse d-flex justify-content-end" id="nav-bar">
+    <button class="btn btn-warning mr-2"><i class="fa fa-plus"></i> 상품 등록</button>
+    <form class="form-inline">
+      <input class="form-control mr-2" type="text" placeholder="상품 번호" #searchInput>
+      <button class="btn btn-warning" type="button"
+              (click)="searchProduct(searchInput.value)">상품 조회</button>
+    </form>
+  </div>
+</nav>
