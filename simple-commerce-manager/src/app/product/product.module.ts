@@ -6,7 +6,6 @@ import { ProductManagementComponent } from './product-management/product-managem
   imports: [
     CommonModule
   ],
-  declarations: [ProductManagementComponent],
-  exports: [ProductManagementComponent]
+  declarations: [ProductManagementComponent]
 })
 export class ProductModule { }
