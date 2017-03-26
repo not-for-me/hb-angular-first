@@ -3,5 +3,5 @@
   <label for="chk-{{i + 1}}">{{item}}</label>
   <input type="checkbox" id="chk-{{i + 1}}" [(ngModel)]="checkedResult[i]" />
 </span>
-<button>결과 출력</button>
-<cc-check-list-result></cc-check-list-result>
+<button (click)="extractCheckedResult()">결과 출력</button>
+<cc-check-list-result [checkedResult]="checkedResultData"></cc-check-list-result>
