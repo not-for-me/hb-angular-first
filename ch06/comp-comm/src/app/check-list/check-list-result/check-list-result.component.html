@@ -1,5 +1,7 @@
 <h4>체크한 항목 수: {{checkedCnt}}</h4>
 <h4>체크한 항목:</h4>
 <ul>
-  <li *ngFor="let item of _checkedData">{{item}}</li>
+  <li *ngFor="let item of _checkedData; let idx = index">
+    {{item}} <button (click)="removeMe(idx)">X</button>
+  </li>
 </ul>

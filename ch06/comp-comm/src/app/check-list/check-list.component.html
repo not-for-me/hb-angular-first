@@ -4,4 +4,5 @@
   <input type="checkbox" id="chk-{{i + 1}}" [(ngModel)]="checkedResult[i]" />
 </span>
 <button (click)="extractCheckedResult()">결과 출력</button>
-<cc-check-list-result [checkedResult]="checkedResultData"></cc-check-list-result>
+<cc-check-list-result [checkedResult]="checkedResultData"
+        (onSelectedToRemoveItem)="removeCheckedItem($event)"></cc-check-list-result>
