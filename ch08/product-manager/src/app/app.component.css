@@ -1,7 +1,12 @@
-.ng-valid {
-  border-right: 5px solid #42A948; /* green */
+fieldset {
+  border: 1px solid lightblue;
 }
 
-.ng-invalid:not(form)  {
-  border-right: 5px solid #a94442; /* red */
+input.ng-valid, textarea.ng-valid {
+  border-bottom: 2px solid lightgreen;
 }
+
+input.ng-invalid:not(form), textarea.ng-invalid:not(form) {
+  border-bottom: 2px solid lightsalmon;
+}
+
