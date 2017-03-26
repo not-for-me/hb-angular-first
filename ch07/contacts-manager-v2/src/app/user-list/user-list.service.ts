@@ -1,18 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers } from '@angular/http';
 import { User } from './user-detail';
+import { MyApiGatewayService } from '../my-api-gateway.service';
 
 
 @Injectable()
 export class UserListService {
 
-  constructor(public http: Http) { }
+  constructor(public apiGateway: MyApiGatewayService) { }
 
   findAllUserSummary() {
-    const headerInfo = new Headers();
-    headerInfo.set('X-My-Api-Token', 'angular-is-awesome');
-
-    return this.http.get('/api/v1/users', { headers: headerInfo }).map(res => res.json());
+    return this.apiGateway.get('users');
   }
 
 }

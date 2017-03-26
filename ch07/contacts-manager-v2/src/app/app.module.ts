@@ -7,9 +7,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule, MdToolbarModule, MdListModule, MdCardModule, MdDialogModule, MdSnackBarModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { UserListComponent, UserListService, UserDetailComponent, UserDetailService } from './user-list';
-
-// const headerInfo = new Headers();
-// headerInfo.set('Authorization', 'angular-is-awesome');
+import { MyApiGatewayService } from './my-api-gateway.service';
+import { API_URL_TOKEN, API_VER_TOKEN } from './app.tokens';
 
 // export class MyRequestOptions extends BaseRequestOptions {
 //   headers = headerInfo;
@@ -34,7 +33,13 @@ import { UserListComponent, UserListService, UserDetailComponent, UserDetailServ
     MdDialogModule,
     MdSnackBarModule
   ],
-  providers: [UserListService, UserDetailService],
+  providers: [
+    UserListService,
+    UserDetailService,
+    MyApiGatewayService,
+    { provide: API_URL_TOKEN, useValue: '/api' },
+    { provide: API_VER_TOKEN, useValue: 'v1' }
+  ],
   // {provide: RequestOptions, useClass: MyRequestOptions}],
   bootstrap: [AppComponent],
   entryComponents: [UserDetailComponent]

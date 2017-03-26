@@ -21,27 +21,29 @@ export class MyApiGatewayService {
   }
 
   makeDefaultHttpOption() {
-    // TODO your custome Request options...
-    // const headers = new Headers();
-    // headers.append('Content-type', 'application/json');
-    // this.reqOptions.headers = headers;
+    const headers = new Headers();
+    headers.set('X-My-Api-Token', 'angular-is-awesome');
+    this.reqOptions.headers = headers;
   }
 
-  get(url: string)  {
+  get(url: string) {
     return this._http
       .get(`${this.apiUrl}/${this.apiVer}/${url}`, this.reqOptions)
       .map(JSON_MAPPER_FN)
   }
 
   post(url: string, data: any) {
-    return this._http.post(url, data);
+    return this._http
+      .post(`${this.apiUrl}/${this.apiVer}/${url}`, data, this.reqOptions);
   }
 
   put(url: string, data: any) {
-    return this._http.put(url, data);
+    return this._http
+      .put(`${this.apiUrl}/${this.apiVer}/${url}`, data, this.reqOptions);
   }
 
   delete(url: string) {
-    return this._http.delete(url);
+    return this._http
+      .delete(`${this.apiUrl}/${this.apiVer}/${url}`, this.reqOptions);
   }
 }
