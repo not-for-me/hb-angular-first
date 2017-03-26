@@ -1,27 +1,35 @@
 <h4 class="p-4">{{title}}</h4>
-<form (ngSubmit)="onSubmit()" (ngReset)="onReset()" #prodForm="ngForm" novalidate>
+<form (ngSubmit)="onSubmit()" (ngReset)="onReset()" #prodForm="ngForm" novalidate >
   <div class="input-group pl-5 my-3">
     <span class="input-group-addon" id="product-name">상품명</span>
-    <input type="text" name="prod-name" class="form-control col-4" [(ngModel)]="product.name" required/>
+    <input type="text" name="prod-name" class="form-control col-4"
+      [(ngModel)]="product.name" required/>
   </div>
 
   <div class="input-group pl-5 my-3">
     <span class="input-group-addon" id="product-listPrice">상품가격</span>
-    <input type="number" name="prod-price" class="form-control col-4" [(ngModel)]="product.listPrice" required pattern="[1-9]\d*"  />
+    <input type="number" name="prod-price" class="form-control col-4"
+      [(ngModel)]="product.listPrice" required min="1000" max="1000000" pattern="[1-9]\d*" />
   </div>
 
   <div class="input-group pl-5 my-3">
     <span class="input-group-addon" id="prodcut-qty">상품수량</span>
-    <input type="number" name="prod-qty" class="form-control col-4" [(ngModel)]="product.qty" required pattern="[1-9]\d*"  />
+    <input type="number" name="prod-qty" class="form-control col-4"
+      [(ngModel)]="product.qty" required min="1" max="100" pattern="[1-9]\d*" />
   </div>
 
   <div class="input-group pl-5 my-3">
-    <textarea class="form-control col-6" name="prod-desc" rows="4" placeholder="상품 상세 설명" [(ngModel)]="product.desc"
-          required minlength="5" maxlength="100"></textarea>
+    <textarea class="form-control col-6" name="prod-desc"
+      rows="4" placeholder="상품 상세 설명" [(ngModel)]="product.desc"
+      required minlength="5" maxlength="100"></textarea>
   </div>
 
-  <div class="row m-3 p-3">
-    <button type="submit" class="btn btn-info btn-sm mr-2" [disabled]="!prodForm.form.valid">상품 등록</button>
-    <button type="reset" class="btn btn-warning btn-sm">초기화</button>
-  </div>
+  <ul>
+    <li *ngFor="let err of errors">{{err | json}}</li>
+  </ul>
+<div class="row m-3 p-3">
+  <button type="submit" class="btn btn-info btn-sm mr-2"
+    [disabled]="!prodForm.form.valid">상품 등록</button>
+  <button type="reset" class="btn btn-warning btn-sm">초기화</button>
+</div>
 </form>
