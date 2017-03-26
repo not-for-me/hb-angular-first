@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+fieldset {
+  border: 1px solid lightblue;
+}
+
+input.ng-valid, textarea.ng-valid {
+  border-bottom: 2px solid lightgreen;
+}
+
+input.ng-invalid:not(form), textarea.ng-invalid:not(form) {
+  border-bottom: 2px solid lightsalmon;
+}
+

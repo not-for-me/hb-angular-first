@@ -5,12 +5,14 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { MinNumValueValidator, MaxNumValueValidator } from './custom-validators';
+import { ManagerInfoComponent } from './manager-info/manager-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MinNumValueValidator,
-    MaxNumValueValidator
+    MaxNumValueValidator,
+    ManagerInfoComponent
   ],
   imports: [
     BrowserModule,

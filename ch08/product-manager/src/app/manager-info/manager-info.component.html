@@ -1,0 +1,18 @@
+<fieldset class="mx-2 my-2 py-2 rounded" [formGroup]="manager">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <div class="input-group">
+          <span class="input-group-addon">이름</span>
+          <input type="text" class="form-control" [id]="'manager-name-' + idx" formControlName="name"/>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="input-group">
+          <span class="input-group-addon">연락처</span>
+          <input type="text" class="form-control" [id]="'manager-phone-' + idx" formControlName="phoneNum"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</fieldset>

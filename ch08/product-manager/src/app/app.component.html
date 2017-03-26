@@ -23,6 +23,20 @@
     </div>
   </fieldset>
 
+<h4 class="pl-5 mt-5">담당자 정보</h4>
+  <fieldset class="mx-5 mb-5 p-3 rounded">
+    <div class="pl-2 my-2">
+      <button type="button" class="btn btn-info btn-sm mr-1" (click)="addManager()">+</button>
+      <button type="button" class="btn btn-warning btn-sm mr-1" (click)="removeManager()">-</button>
+    </div>
+    <div class="pl-5 my-3" formArrayName="managers">
+      <div *ngFor="let manager of managers.controls; let i = index">
+        <pm-manager-info [idx]="i" [manager]="manager"></pm-manager-info>
+      </div>
+    </div>
+  </fieldset>
+
+
   <h4 class="pl-5 mt-5">제출 및 초기화</h4>
   <fieldset class="mx-5 mb-5 p-3 rounded">
     <div class="row m-3 p-3">

@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NgModel, NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { NgModel, NgForm, FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { NumberRangeValidator } from "./custom-validators";
 
 @Component({
@@ -10,8 +10,11 @@ import { NumberRangeValidator } from "./custom-validators";
 export class AppComponent {
   title = '상품 등록';
   prodForm: FormGroup;
+  managers: FormArray;
 
   constructor(public fb: FormBuilder) {
+    this.managers = this.fb.array([this.buildManagerFormGroup()]);
+
     this.prodForm = this.fb.group(
       {
         name: ['', Validators.required],
@@ -38,6 +41,7 @@ export class AppComponent {
             Validators.maxLength(100)
           ])
         ],
+        managers: this.managers
       });
   }
 
@@ -52,6 +56,14 @@ export class AppComponent {
           ])
         ]
       });
+  }
+
+  addManager() {
+    this.managers.push(this.buildManagerFormGroup());
+  }
+
+  removeManager() {
+    this.managers.removeAt(this.managers.length - 1);
   }
 
   onSubmit() {
