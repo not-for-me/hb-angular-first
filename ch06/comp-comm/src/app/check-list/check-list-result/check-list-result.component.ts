@@ -6,10 +6,18 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./check-list-result.component.css']
 })
 export class CheckListResultComponent implements OnInit {
+  _checkedData: string[];
   checkedCnt: number;
-  @Input() checkedResult: string[];
 
   constructor() { }
 
   ngOnInit() { }
+
+  @Input()
+  set checkedResult(checkedResult: string[]) {
+    if (checkedResult) {
+      this._checkedData = checkedResult;
+      this.checkedCnt = this._checkedData.length;
+    }
+  }
 }
