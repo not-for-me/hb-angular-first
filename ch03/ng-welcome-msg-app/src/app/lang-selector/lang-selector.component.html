@@ -1,3 +1,23 @@
-<p>
-  lang-selector works!
-</p>
+
+<div id="lang-select">
+  <div class="lang-box">
+    <img src="/assets/img/South_Korea.png">
+    <label *ngIf="langCode === 'ko'">선택됨</label>
+    <button type="button" (click)="setLangCode('ko')" [disabled]="langCode === 'ko'">한글</button>
+  </div>
+  <div class="lang-box">
+    <img src="/assets/img/United_States.png">
+    <label *ngIf="langCode === 'en'">선택됨</label>
+    <button type="button" (click)="setLangCode('en')" [disabled]="langCode === 'en'">영어</button>
+  </div>
+  <div class="lang-box">
+    <img src="/assets/img/Japan.png">
+    <label *ngIf="langCode === 'jp'">선택됨</label>
+    <button type="button" (click)="setLangCode('jp')" [disabled]="langCode === 'jp'">일본어</button>
+  </div>
+  <div class="lang-box">
+    <img src="/assets/img/France.png">
+    <label *ngIf="langCode === 'fr'">선택됨</label>
+    <button type="button" (click)="setLangCode('fr')" [disabled]="langCode === 'fr'">불어</button>
+  </div>
+</div>
