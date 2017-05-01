@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { WelcomeMsgComponent } from './welcome-msg/welcome-msg.component';
+import { LangSelectorComponent } from './lang-selector/lang-selector.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeMsgComponent
+    WelcomeMsgComponent,
+    LangSelectorComponent
   ],
   imports: [
     BrowserModule,
