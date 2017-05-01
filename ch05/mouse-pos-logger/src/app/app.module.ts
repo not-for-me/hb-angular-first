@@ -9,6 +9,7 @@ import { MouseTrackZoneComponent } from './mouse-track-zone/mouse-track-zone.com
 import { MySpecialLoggerService } from './my-special-logger.service';
 
 import { LogLevel } from './log-level.enum';
+import { LOG_LEVEL_TOKEN } from './app.tokens';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { LogLevel } from './log-level.enum';
     FormsModule,
     HttpModule
   ],
-  providers: [MySpecialLoggerService, { provide: 'logLevel', useValue: LogLevel.INFO }],
+  providers: [MySpecialLoggerService, { provide: LOG_LEVEL_TOKEN, useValue: LogLevel.INFO }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
