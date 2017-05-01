@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lang-selector.component.css']
 })
 export class LangSelectorComponent implements OnInit {
+  langCode: string;
 
-  constructor() { }
+  constructor() {
+    this.langCode = 'ko';
+  }
 
   ngOnInit() {
+  }
+
+  setLangCode(code: string) {
+    this.langCode = code;
   }
 
 }
