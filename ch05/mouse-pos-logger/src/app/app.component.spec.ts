@@ -1,15 +1,19 @@
 import { TestBed, async } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
+import { MouseTrackZoneComponent } from './mouse-track-zone/mouse-track-zone.component';
+import { MySpecialLoggerService } from './my-special-logger.service';
+import { AnotherLoggerService } from './another-logger.service';
+import { LogLevel } from './log-level.enum';
+import { LOG_LEVEL_TOKEN } from './app.tokens';
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
+  beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
-  }));
+      declarations: [AppComponent, MouseTrackZoneComponent],
+      providers: [MySpecialLoggerService, AnotherLoggerService, { provide: LOG_LEVEL_TOKEN, useValue: LogLevel.INFO }]
+    });
+  });
 
   it('should create the app', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
