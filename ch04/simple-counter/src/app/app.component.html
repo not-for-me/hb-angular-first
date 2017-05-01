@@ -1,3 +1,10 @@
-<h1>
-  {{title}}
-</h1>
+<div class="counter" [style.backgroundColor]="colorByValue()">{{curVal}}</div>
+<div class="row buttons">
+  <button type="button" (click)="inc()">+</button>
+  <button type="button" (click)="dec()">-</button>
+</div>
+<div class="row manual-action">
+  <label for="manual-val">수동 수정:</label>
+  <input type="number" id="manual-val" [(ngModel)]="manualVal">
+  <button type="button" (click)="setValueForcibly()">강제 저장</button>
+</div>
