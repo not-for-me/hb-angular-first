@@ -1,0 +1,31 @@
+<!doctype html>
+
+<html lang="ko">
+
+<head>
+	<title>Welcome Msg App</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+	<h4>
+		<span id="display-name"></span>님 환영합니다.
+	</h4>
+	<div class="contents">
+		<label for="user-name">사용자 이름: </label>
+		<input type="text" name="user-name" id="user-name">
+		<button type="button">입력</button>
+	</div>
+	<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+	<script>
+    $(document).ready(function() {
+      $("button").on('click', function() {
+        var userName = $("#user-name").val();
+        $("#display-name").text(userName);
+      });
+    });
+  </script>
+</body>
+
+</html>
