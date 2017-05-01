@@ -12,5 +12,9 @@ export class AppComponent {
   title = 'mpl works!';
 
   constructor(private logger: MySpecialLoggerService) { }
+
+  printDebugLog() {
+    this.logger.debug("test depenency injector tree!");
+  }
 }
 
