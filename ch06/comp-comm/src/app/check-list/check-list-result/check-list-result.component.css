@@ -1,0 +1,11 @@
+    :host {
+      display: block;
+      border: 1px solid dimgray; 
+      width: 380px;
+      margin: 10px;
+      padding: 10px;
+    }
+
+    ul {
+      margin-top: 5px;
+    }
