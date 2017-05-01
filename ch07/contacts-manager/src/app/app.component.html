@@ -1,3 +1,15 @@
-<h1>
-  {{title}}
-</h1>
+<h2>Contact Manager : Http 실습</h2>
+<div>
+  <h4>사용자 조회 / 삭제</h4>
+  <label for="user-no">사용자 Id: </label><input type="number" name="user-id" #userIdInput />
+  <button type="button" (click)="findUser(userIdInput.value)">검색</button>
+  <button type="button" (click)="removeUser(userIdInput.value)">삭제</button>
+  <div>{{searchedUser | json}}</div>
+</div>
+<div>
+  <h4>사용자 등록 / 수정</h4>
+  <label for="user-id">사용자 ID:</label> <input type="number" name="user-id" [(ngModel)]="user.id"> <br/>
+  <label for="user-name">사용자 이름:</label> <input type="text" name="user-name" [(ngModel)]="user.name"> <br/>
+  <label for="user-age">사용자 나이:</label> <input type="number" for="user-age" [(ngModel)]="user.age" />
+  <button type="button" (click)="modifyUser()">사용자 등록/수정</button>
+</div>
