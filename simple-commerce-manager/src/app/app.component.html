@@ -1,8 +1,12 @@
 <scm-navbar></scm-navbar>
 <div class="container-fluid">
   <div class="row">
-    <scm-sidebar></scm-sidebar>
-    <main class="col-10 offset-2 pt-3"></main>
+    <scm-sidebar (changedMenu)="currentMenu = $event"></scm-sidebar>
+    <main class="col-10 offset-2 pt-3" [ngSwitch]=" currentMenu">
+      <div *ngSwitchCase="'product'">상품관리 뷰</div>
+      <div *ngSwitchCase="'category'">카테고리 뷰</div>
+      <div *ngSwitchDefault>기본 뷰</div>
+    </main>
   </div>
 </div>
 <scm-footer></scm-footer>
