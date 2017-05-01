@@ -8,12 +8,14 @@ import { WelcomeMsgComponent } from './welcome-msg/welcome-msg.component';
 import { LangSelectorComponent } from './lang-selector/lang-selector.component';
 
 import { I18nSupportService } from './i18n-support.service';
+import { LangSelectorBtnPipe } from './lang-selector/lang-selector-btn.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeMsgComponent,
-    LangSelectorComponent
+    LangSelectorComponent,
+    LangSelectorBtnPipe,
   ],
   imports: [
     BrowserModule,
