@@ -5,7 +5,7 @@ app.use(bodyParser.json());
 
 const PORT_NUM = 3000;
 const apiPrefix = '/api/v1';
-const API_KEY_HEADER_NAME = 'Authorization';
+const API_KEY_HEADER_NAME = 'X-My-Api-Token';
 const TEST_KEY = 'angular-is-awesome';
 
 const isNotAuthorizedRequest = (apiKey) => {

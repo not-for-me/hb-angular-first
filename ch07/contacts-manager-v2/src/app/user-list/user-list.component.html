@@ -1,0 +1,22 @@
+<div class="container" fxLayout="column" fxLayoutAlign="start center">
+  <md-list class="user-list">
+    <h2 md-subheader>사용자 목록</h2>
+    <md-list-item *ngFor="let user of userSummaries">
+      <div md-line fxLayout="row" fxLayoutAlign="space-between center">
+        <span class="inner-content"><a (click)="getUserDetailDialog(user.no)">{{user.name}}</a></span>
+        <span class="inner-content">{{user.phoneNum}}</span>
+        <span class="inner-content">{{user.mail}}</span>
+        <button class="more-btn" md-icon-button [mdMenuTriggerFor]="menu" (click)="selectUser(user.no)">
+          <md-icon>more_vert</md-icon>
+        </button>
+      </div>
+      <md-menu #menu="mdMenu">
+        <button md-menu-item (click)="removeUser()"><md-icon>delete</md-icon><span>사용자 삭제</span></button>
+      </md-menu>
+    </md-list-item>
+  </md-list>
+
+</div>
+<span class="hover-add-btn">
+  <button md-fab (click)="addUser()"><md-icon>person_add</md-icon></button>
+</span>

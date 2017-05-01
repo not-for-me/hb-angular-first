@@ -1,0 +1,34 @@
+<h3 md-dialog-title>{{isAddMode ? '사용자 등록' : '사용자 조회 / 수정'}}</h3>
+<md-dialog-content fxLayout="column" fxLayoutAlign="space-around center">
+  <div>
+    <md-input-container>
+      <input mdInput placeholder="이름" [(ngModel)]="user.name">
+    </md-input-container>
+  </div>
+  <div>
+    <md-input-container>
+      <input mdInput placeholder="ID" [(ngModel)]="user.id">
+    </md-input-container>
+  </div>
+  <div>
+    <md-input-container>
+      <input mdInput placeholder="메일" [(ngModel)]="user.mail">
+    </md-input-container>
+  </div>
+  <div>
+    <md-input-container>
+      <input mdInput placeholder="핸드폰" [(ngModel)]="user.phoneNum">
+    </md-input-container>
+  </div>
+  <div>
+    <md-radio-group [(ngModel)]="user.sex">
+      <md-radio-button value="M">남성</md-radio-button>
+      <md-radio-button value="F">여성</md-radio-button>
+    </md-radio-group>
+  </div>
+</md-dialog-content>
+
+<md-dialog-actions fxLayout="row" fxLayoutAlign="space-around center">
+  <button md-button (click)="modifyUser()">{{isAddMode ? '생성하기' : '수정하기'}}</button>
+  <button md-button (click)="closeDialog()">닫기</button>
+</md-dialog-actions>

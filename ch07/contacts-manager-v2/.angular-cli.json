@@ -19,7 +19,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "cm2",
       "styles": [
-        "styles.css"
+        "styles.css",
+         "material-theme.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

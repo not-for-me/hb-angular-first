@@ -1,0 +1,29 @@
+div.container {
+    height: 100%;
+    margin-top: 20px;
+}
+
+.user-list {
+    width: 80%;
+}
+
+md-list-item {
+    border: 1px solid lightslategrey;
+    background: white;
+}
+
+.inner-content {
+    display: inline-block;
+    width: 30%;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.hover-add-btn {
+    display: inline-block;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
