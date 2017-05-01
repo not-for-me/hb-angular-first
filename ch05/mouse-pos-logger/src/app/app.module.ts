@@ -6,6 +6,11 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { MouseTrackZoneComponent } from './mouse-track-zone/mouse-track-zone.component';
 
+import { MySpecialLoggerService } from './my-special-logger.service';
+
+import { LogLevel } from './log-level.enum';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +21,7 @@ import { MouseTrackZoneComponent } from './mouse-track-zone/mouse-track-zone.com
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [MySpecialLoggerService, { provide: 'logLevel', useValue: LogLevel.INFO }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
