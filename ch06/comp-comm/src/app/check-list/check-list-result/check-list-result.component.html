@@ -2,6 +2,7 @@
 <h4>체크한 항목:</h4>
 <ul>
   <li *ngFor="let item of _checkedData; let idx = index">
-    {{item}} <button (click)="removeMe(idx)">X</button>
+    {{item.content}} <button (click)="onRemove(idx)">X</button>
   </li>
 </ul>
+<cc-result-graph></cc-result-graph>

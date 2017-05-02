@@ -6,19 +6,23 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { CheckListComponent } from './check-list/check-list.component';
 import { CheckListResultComponent } from './check-list/check-list-result/check-list-result.component';
+import { ResultGraphComponent } from './check-list/check-list-result/result-graph/result-graph.component';
+
+import { CheckListDataService } from './check-list/check-list-data.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     CheckListComponent,
-    CheckListResultComponent
+    CheckListResultComponent,
+    ResultGraphComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [CheckListDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
