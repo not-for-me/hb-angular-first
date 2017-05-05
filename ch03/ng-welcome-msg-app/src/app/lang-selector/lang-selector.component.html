@@ -1,7 +1,8 @@
-<div id="lang-select">
-  <div class="lang-box" *ngFor="let lang of langMetadata">
-    <img src="{{'/assets/img/' + lang.flagImgName}}">
-    <label *ngIf="langCode === lang.code">선택됨</label>
-    <button type="button" (click)="setLangCode(lang.code)" [disabled]="langCode === lang.code">{{lang | langSelectorBtn}}</button>
-  </div>
-</div>
+<md-card>
+  <md-radio-group [(ngModel)]="langCode" (change)="syncToService($event.value)">
+    <md-radio-button *ngFor="let lang of langMetadata" [value]="lang.code">
+      {{lang | langSelectorBtn}}
+      <img src="{{'/assets/img/' + lang.flagImgName}}">
+    </md-radio-button>
+  </md-radio-group>
+</md-card>
