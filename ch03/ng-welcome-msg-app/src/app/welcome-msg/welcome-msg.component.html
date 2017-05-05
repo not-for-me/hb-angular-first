@@ -1,6 +1,6 @@
-<h4>
-  <span>{{userName}}</span>님 환영합니다.</h4>
+<h4>{{welcomeMsg}}</h4>
 <div class="contents">
   <label for="user-name">사용자 이름: </label>
   <input type="text" name="user-name" id="user-name" [(ngModel)]="userName" (ngModelChange)="onChange()">
+  <button type="button" (click)="showWelcomeMsg()">입력</button>
 </div>
