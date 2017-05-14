@@ -1,0 +1,107 @@
+<h4>상품 {{subTitle}}</h4>
+<form (ngSubmit)="submit()" [formGroup]="productForm" novalidate>
+  <div class="container-fluid p-2 rounded">
+    <div class="row my-4">
+      <div class="col-12">
+        <div class="input-group">
+          <span class="input-group-addon">상품 번호</span>
+          <input type="text" class="form-control" formControlName="no" readonly />
+        </div>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-12">
+        <div class="input-group">
+          <span class="input-group-addon">상품명</span>
+          <input type="text" class="form-control" formControlName="name"/>
+        </div>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-12">
+        <div class="input-group">
+          <span class="input-group-addon">상품가격</span>
+          <input type="number" class="form-control" formControlName="listPrice"/>
+        </div>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-12">
+        <div class="input-group">
+          <span class="mr-3">상품 카테고리</span>
+          <select type="number" formControlName="catNo">
+            <option [value]="0">선택해 주세요</option>
+            <option *ngFor="let cat of usedCats" [value]="cat.no">{{cat.name}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-12">
+        <label class="mr-3">사용여부:</label>
+        <label class="custom-control custom-radio">
+          <input type="radio" formControlName="isUse" class="custom-control-input" [value]="true">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">사용</span>
+        </label>
+        <label class="custom-control custom-radio">
+          <input type="radio" formControlName="isUse" class="custom-control-input" [value]="false">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">사용 안 함</span>
+        </label>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-12">
+        <div class="input-group">
+          <span class="input-group-addon">상품수량</span>
+          <input type="number" class="form-control" formControlName="qty"/>
+        </div>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-12">
+        <div class="input-group">
+          <textarea class="form-control" rows="4" placeholder="상품 상세 설명" formControlName="desc">
+          </textarea>
+        </div>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-12">
+        <div class="input-group">
+          <span class="input-group-addon">생성일</span>
+          <input type="text" class="form-control" formControlName="createdTime" readonly />
+        </div>
+      </div>
+    </div>
+    <div class="row my-4" *ngIf="actionMode !== 'create'">
+      <div class="col-12">
+        <div class="input-group">
+          <span class="input-group-addon">수정일</span>
+          <input type="text" class="form-control" formControlName="updatedTime" readonly />
+        </div>
+      </div>
+    </div>
+    <div class="row my-4">
+      <div class="col-12 text-right">
+        <button type="submit" class="btn btn-info btn-sm mr-2" [disabled]="!productForm.valid">
+          <i class="fa fa-check"></i> 저장
+        </button>
+        <button type="reset" class="btn btn-info btn-sm mr-2" [disabled]="productForm.disabled">
+          <i class="fa fa-trash"></i> 초기화
+        </button>
+        <button type="button" class="btn btn-warning btn-sm mr-2" (click)="cancel()">
+          <i class="fa fa-long-arrow-left"></i> 돌아가기
+        </button>
+        <button type="button" class="btn btn-success btn-sm mr-2" [disabled]="isFirstItem()" (click)="goPrevItem()">
+          <i class="fa fa-arrow-left"></i> 이전 상품
+        </button>
+        <button type="button" class="btn btn-success btn-sm" [disabled]="isLastItem()" (click)="goNextItem()">
+          <i class="fa fa-arrow-right"></i> 다음 상품
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+

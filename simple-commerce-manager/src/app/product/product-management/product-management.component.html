@@ -1,3 +1,29 @@
-<p>
-  product-management works!
-</p>
+<div class="container-fluid">
+  <div class="row my-4">
+    <div class="col-12">
+      <scm-button-group (onClicked)="clickedBtn($event)"></scm-button-group>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <span>전체 상품: {{totalItemCnt}}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <scm-product-list [totalItemCnt]="totalItemCnt"></scm-product-list>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 text-right">
+      <label for="cur-page-size">최대 상품: </label>
+      <input type="number" id="cur-page-size" #pageSizeInput [value]="pageSize">
+      <button class="btn btn-info btn-sm" type="button" (click)="pageSizeChanged(pageSizeInput.value)">변경</button>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-4">
+    <ngb-pagination [pageSize]="pageSize" [collectionSize]="totalItemCnt"
+                    [maxSize]="10" [ellipses]="false" [page]="pageNo"
+                    (pageChange)="pageNoChanged($event)"></ngb-pagination>
+  </div>
+</div>

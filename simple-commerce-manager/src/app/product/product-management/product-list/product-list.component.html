@@ -1,0 +1,24 @@
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th class="text-center">
+      <button type="button" class="btn btn-sm btn-outline-info"
+              (click)="toggleAllItem()">전체 {{ isCheckedAnyOne() ? '해제' : '선택'}}</button>
+    </th>
+    <th class="text-center">#</th>
+    <th class="text-center">상품명</th>
+    <th class="text-center">상품가격</th>
+    <th class="text-center">상품 상태</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let prod of products; let i = index">
+    <td class="text-center"><input type="checkbox" [(ngModel)]="checkedStatus[i]"
+                                   (click)="checkProduct($event.target.value, i, prod.no)"></td>
+    <td>{{prod.no}}</td>
+    <td><a [routerLink]="['product', prod.no]" [queryParams]="{action: 'edit'}">{{prod.name}}</a></td>
+    <td>{{prod.listPrice}}</td>
+    <td>{{prod.status}}</td>
+  </tr>
+  </tbody>
+</table>

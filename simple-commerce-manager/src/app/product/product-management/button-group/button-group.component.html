@@ -1,0 +1,2 @@
+<button class="btn btn-info btn-sm" [disabled]="noneNo$ | async" (click)="onClicked.emit('sell')">판매</button>
+<button class="btn btn-danger btn-sm" [disabled]="noneNo$ | async" (click)="onClicked.emit('stop')">판매중지</button>
