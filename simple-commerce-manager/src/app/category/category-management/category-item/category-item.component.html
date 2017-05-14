@@ -1,0 +1,30 @@
+<div class="card m-2">
+  <div class="card-block p-3">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-1">{{category.no}}</div>
+        <div class="col-6">
+          <label class="card-title mr-2">이름:</label>
+          <span class="btn-link" routerLink="/category-list/category/{{category.no}}"
+                [queryParams]="{action: 'read'}">{{category.name}}</span>
+        </div>
+        <div class="col-3">
+          <label class="card-title mr-2">사용 여부:</label>
+          <span class="badge badge-pill badge-primary">{{category.isUse}}</span>
+        </div>
+        <div class="col-2 text-right">
+          <button type="button" class="btn btn-sm btn-outline-warning"
+                  routerLink="/category-list/category/{{category.no}}" [queryParams]="{action: 'edit'}">
+            <i class="fa fa-edit"></i> 수정
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-2">상세설명:</div>
+        <div class="col-10">
+          <textarea class="form-control" rows="2" readonly>{{category.desc}}</textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

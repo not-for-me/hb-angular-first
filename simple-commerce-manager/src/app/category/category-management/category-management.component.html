@@ -1,3 +1,24 @@
-<p>
-  category-management works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <button type="button" class="btn btn-outline-primary btn-sm" routerLink="/category-list/category/0" [queryParams]="{action: 'create'}">카테고리 등록
+      </button>
+    </div>
+  </div>
+</div>
+<div class="container-fluid my-4">
+  <h4>카테고리 목록</h4>
+  <div class="row">
+    <div class="col-12 text-right">
+      <span>전체 카테고리: {{totalItemCnt}}</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <scm-category-item *ngFor="let category of categories" [category]="category"></scm-category-item>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-4">
+    <ngb-pagination [pageSize]="pageSize" [collectionSize]="totalItemCnt" [maxSize]="10" [ellipses]="false" [page]="pageNo" (pageChange)="pageNoChanged($event)"></ngb-pagination>
+  </div>
+</div>

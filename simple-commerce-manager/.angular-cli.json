@@ -19,9 +19,10 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "scm",
       "styles": [
-        "styles.css",
         "../node_modules/bootstrap/dist/css/bootstrap.css",
-        "../node_modules/font-awesome/css/font-awesome.css"
+        "../node_modules/font-awesome/css/font-awesome.css",
+        "../node_modules/ng2-toastr/bundles/ng2-toastr.min.css",
+        "styles.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",

@@ -69,3 +69,5 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 import 'rxjs/add/operator/map'; 
 import 'rxjs/add/operator/take';
 import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/filter';
