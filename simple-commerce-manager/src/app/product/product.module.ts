@@ -10,6 +10,7 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { ProductRoutingModule } from "./product-routing.module";
 import { CheckedProductSetService } from "./product-management/checked-product-set.service";
 import { ButtonGroupComponent } from './product-management/button-group/button-group.component';
+import { ProductStatusPipe } from './product-status.pipe';
 
 @NgModule({
   imports: [
@@ -19,7 +20,7 @@ import { ButtonGroupComponent } from './product-management/button-group/button-g
     NgbPaginationModule,
     ProductRoutingModule
   ],
-  declarations: [ProductManagementComponent, ProductDetailComponent, ProductListComponent, ButtonGroupComponent],
+  declarations: [ProductManagementComponent, ProductDetailComponent, ProductListComponent, ButtonGroupComponent, ProductStatusPipe],
   providers: [
     CheckedProductSetService,
     ProductBulkUpdaterService,

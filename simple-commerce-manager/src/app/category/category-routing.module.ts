@@ -4,18 +4,22 @@ import { CategoryManagementComponent } from './category-management/category-mana
 import { CategoryDetailResolverService } from "./category-detail/category-detail-resolver.service";
 import { CategoryDetailComponent } from "./category-detail/category-detail.component";
 import { CategoryListResolverService } from "./category-management/category-list-resolver.service";
+import { CanDeactivateGuardService } from "../shared/can-deactivate-guard.service";
+import { SessionAuthGuardService } from "../shared/session-auth-guard.service";
 
 const routes: Routes = [{
   path: 'category-list', children: [
     {
       path: '',
       pathMatch: 'full',
-      resolve: { list: CategoryListResolverService },
+      resolve: {list: CategoryListResolverService},
       component: CategoryManagementComponent
     },
     {
       path: 'category/:no',
-      resolve: { category: CategoryDetailResolverService },
+      canActivate: [SessionAuthGuardService],
+      resolve: {category: CategoryDetailResolverService},
+      canDeactivate: [CanDeactivateGuardService],
       component: CategoryDetailComponent
     }
   ]
@@ -24,7 +28,6 @@ const routes: Routes = [{
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  providers: [CategoryDetailResolverService, CategoryListResolverService]
 })
 export class CategoryRoutingModule {
 }

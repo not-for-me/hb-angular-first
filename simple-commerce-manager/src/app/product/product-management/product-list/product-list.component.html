@@ -18,7 +18,7 @@
     <td>{{prod.no}}</td>
     <td><a [routerLink]="['product', prod.no]" [queryParams]="{action: 'edit'}">{{prod.name}}</a></td>
     <td>{{prod.listPrice}}</td>
-    <td>{{prod.status}}</td>
+    <td>{{prod.status | productStatus}}</td>
   </tr>
   </tbody>
 </table>

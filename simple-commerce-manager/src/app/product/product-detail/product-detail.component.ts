@@ -8,7 +8,7 @@ import { FormGroup, Validators, FormBuilder } from "@angular/forms";
 import { ActionMode, ScmSharedUtil } from "../../shared/scm-shared-util";
 import { NumberRangeValidator } from "../../shared/custom-validators";
 import { DataStoreService } from "../../shared/data-store.service";
-// import { CanComponentDeactivate } from "../../shared/can-deactivate-guard.service";
+import { CanComponentDeactivate } from "../../shared/can-deactivate-guard.service";
 
 
 @Component({
@@ -16,7 +16,7 @@ import { DataStoreService } from "../../shared/data-store.service";
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css']
 })
-export class ProductDetailComponent implements OnInit {
+export class ProductDetailComponent implements OnInit, CanComponentDeactivate {
   subTitle;
   actionMode: ActionMode;
   productForm: FormGroup;

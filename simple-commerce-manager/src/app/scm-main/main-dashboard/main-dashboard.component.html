@@ -1,3 +1,14 @@
-<p>
-  main-dashboard works!
-</p>
+<div class="container-fluid">
+  <h4>상품 상태 현황</h4>
+  <div class="row mb-5">
+    <div class="chart" *ngIf="fetchBarChartData">
+      <canvas baseChart [datasets]="barData" [labels]="['상품']" [chartType]="'horizontalBar'" [options]="barChartOptions" width="800"></canvas>
+    </div>
+  </div>
+  <h4>카테고리 별 상품 현황</h4>
+  <div class="row">
+    <div class="chart" *ngIf="fetchPieChartData">
+      <canvas baseChart [data]="pieData" [labels]="pieChartLabels" [chartType]="'pie'" width="600"></canvas>
+    </div>
+  </div>
+</div>

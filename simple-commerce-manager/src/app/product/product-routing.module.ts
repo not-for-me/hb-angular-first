@@ -4,6 +4,8 @@ import { ProductManagementComponent } from "./product-management/product-managem
 import { ProductDetailResolverService } from "./product-detail/product-detail-resolver.service";
 import { ProductDetailComponent } from "./product-detail/product-detail.component";
 import { ProductListResolverService } from "./product-management/product-list/product-list-resolver.service";
+import { CanDeactivateGuardService } from "../shared/can-deactivate-guard.service";
+import { SessionAuthGuardService } from "../shared/session-auth-guard.service";
 
 const routes: Routes = [
   {
@@ -11,12 +13,14 @@ const routes: Routes = [
     {
       path: '',
       pathMatch: 'full',
+      canActivate: [SessionAuthGuardService],
       resolve: {list: ProductListResolverService},
       component: ProductManagementComponent
     },
     {
       path: 'product/:no',
       resolve: {detail: ProductDetailResolverService},
+      canDeactivate: [CanDeactivateGuardService],
       component: ProductDetailComponent
     }
   ]

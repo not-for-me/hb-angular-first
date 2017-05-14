@@ -5,13 +5,14 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ScmSharedUtil, ActionMode } from "../../shared/scm-shared-util";
 import { ActivatedRoute, Router } from "@angular/router";
 import { DataStoreService } from "../../shared/data-store.service";
+import { CanComponentDeactivate } from "../../shared/can-deactivate-guard.service"
 
 @Component({
   selector: 'scm-category-detail',
   templateUrl: 'category-detail.component.html',
   styleUrls: ['category-detail.component.css']
 })
-export class CategoryDetailComponent implements OnInit {
+export class CategoryDetailComponent implements OnInit, CanComponentDeactivate {
   subTitle: string;
   actionMode: ActionMode;
   categoryForm: FormGroup;
