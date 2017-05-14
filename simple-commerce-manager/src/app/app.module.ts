@@ -8,6 +8,8 @@ import { ScmMainModule } from './scm-main/scm-main.module'
 import { ProductModule } from './product/product.module';
 import { CategoryModule } from './category/category.module';
 import { AppRoutingModule } from "./app-routing.module";
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
 
 
 import { AppComponent } from './app.component';
@@ -20,7 +22,10 @@ import { AppComponent } from './app.component';
 
     /* App Modules */
     ScmMainModule, ProductModule, CategoryModule,
-    AppRoutingModule
+    AppRoutingModule,
+
+    /* 3rd Modules */ 
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]
