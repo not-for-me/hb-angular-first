@@ -8,5 +8,6 @@
       <input class="form-control mr-2" type="text" placeholder="상품 번호" #searchInput>
       <button class="btn btn-warning" type="button" (click)="searchProduct(searchInput.value)">상품 조회</button>
     </form>
+    <button class="btn btn-warning ml-2" (click)="checkSession()">{{sessionBtnName}}</button> 
   </div>
 </nav>
