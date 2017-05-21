@@ -1,7 +1,7 @@
 export const LANG_METADATA = [
     {
         code: 'ko',
-        name: '한글',
+        name: '한국어',
         flagImgName: 'South_Korea.png',
         msg: '안녕하세요'
     },
