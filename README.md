@@ -46,14 +46,17 @@ $) git checkout ch3-4
 
 | 장 | 링크 | 실습 예제 |
 | - |:----------------------------------------------| --------- |
-| 4 | [bit.ly/hb-af-ng-if](http://bit.ly/hb-af-ng-if)| NgIf 지시자 |
-| 4 | [bit.ly/hb-af-ng-for](http://bit.ly/hb-af-ng-for) | NgFor 지시자 |
-| 4 | [bit.ly/hb-af-ng-switch](http://bit.ly/hb-af-ng-switch) | NgSwitch 지시자 |
-| 4 | [bit.ly/hb-af-ng-pipe](http://bit.ly/hb-af-ng-pipe) | Pipe |
-| 6 | [bit.ly/hb-af-view-child](http://bit.ly/hb-af-view-child) | ViewChild |
-| 6 | [bit.ly/hb-af-tpl-ref](http://bit.ly/hb-af-tpl-ref) | 템플릿 참조 변수 |
-| 6 | [bit.ly/hb-af-content-projection](http://bit.ly/hb-af-content-projection) | 컨텐트 프로젝션 |
-| 6 | [bit.ly/hb-af-ng-oninit](http://bit.ly/hb-af-ng-oninit) | NgOnInit/Destory |
-| 6 | [bit.ly/hb-af-ng-changes](http://bit.ly/hb-af-ng-changes) | NgOnChanges |
-| 6 | [bit.ly/hb-af-do-check](http://bit.ly/hb-af-do-check) | DoCheck |
-| 8 | [bit.ly/hb-af-ng-model](http://bit.ly/hb-af-ng-model) | NgModel |
+| 4 | [https://embed.plnkr.co/nSKxNw](https://embed.plnkr.co/nSKxNw)| NgIf 지시자 |
+| 4 | [https://embed.plnkr.co/KyGLSK](https://embed.plnkr.co/KyGLSK) | NgFor 지시자 |
+| 4 | [https://embed.plnkr.co/OI7zup](https://embed.plnkr.co/OI7zup) | NgSwitch 지시자 |
+| 4 | [https://embed.plnkr.co/goPGcq](hhttps://embed.plnkr.co/goPGcq) | Pipe |
+| 6 | [https://embed.plnkr.co/OVQ7Eu](https://embed.plnkr.co/OVQ7Eu) | ViewChild |
+| 6 | [https://embed.plnkr.co/R9ppp3](https://embed.plnkr.co/R9ppp3) | 템플릿 참조 변수 |
+| 6 | [https://embed.plnkr.co/SwHzA3](https://embed.plnkr.co/SwHzA3) | 컨텐트 프로젝션 |
+| 6 | [https://embed.plnkr.co/55lLof](hhttps://embed.plnkr.co/55lLof) | NgOnInit/Destory |
+| 6 | [https://embed.plnkr.co/ZqfVSF](https://embed.plnkr.co/ZqfVSF) | NgOnChanges |
+| 6 | [https://embed.plnkr.co/3gLODm](https://embed.plnkr.co/3gLODm) | DoCheck |
+| 책에 없음 | [https://embed.plnkr.co/QB5jlX](https://embed.plnkr.co/QB5jlX) | 지시자의 라이프 사이클 |
+| 책에 없음 | [https://embed.plnkr.co/nRcg7v](https://embed.plnkr.co/nRcg7v) | 프로퍼티 바인딩 관계 |
+| 책에 없음 | [https://plnkr.co/edit/KwRRvp](https://plnkr.co/edit/KwRRvp) | 순한 의존성 문제ㅇ |
+| 8 | [https://embed.plnkr.co/LfXMl3](https://embed.plnkr.co/LfXMl3) | NgModel |
