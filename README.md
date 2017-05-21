@@ -37,6 +37,12 @@ $) ng serve
 
 ### 예시
 ```
+# 태깅된 목록을 조회합니다.
+$) git tag -l
+
+# 5장의 태그만 보고 싶을 
+$) git tag -l | grep -e ch5
+
 # 3장의 4번째 변경내역 체크아웃
 $) git checkout ch3-4
 ```
