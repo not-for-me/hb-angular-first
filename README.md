@@ -58,5 +58,4 @@ $) git checkout ch3-4
 | 6 | [https://embed.plnkr.co/3gLODm](https://embed.plnkr.co/3gLODm) | DoCheck |
 | 책에 없음 | [https://embed.plnkr.co/QB5jlX](https://embed.plnkr.co/QB5jlX) | 지시자의 라이프 사이클 |
 | 책에 없음 | [https://embed.plnkr.co/nRcg7v](https://embed.plnkr.co/nRcg7v) | 프로퍼티 바인딩 관계 |
-| 책에 없음 | [https://plnkr.co/edit/KwRRvp](https://plnkr.co/edit/KwRRvp) | 순한 의존성 문제ㅇ |
 | 8 | [https://embed.plnkr.co/LfXMl3](https://embed.plnkr.co/LfXMl3) | NgModel |
