@@ -45,7 +45,7 @@ $) git checkout ch3-4
 * 일부 간단한 예제의 경우 온라인에서 바로 동작 예제를 확인할 수 있도록 다음의 링크를 제공합니다. 
 
 | 장 | 링크 | 실습 예제 |
-| - |:----------------------------------------------:| ---------:|
+| - |:----------------------------------------------| --------- |
 | 4 | [bit.ly/hb-af-ng-if](http://bit.ly/hb-af-ng-if)| NgIf 지시자 |
 | 4 | [bit.ly/hb-af-ng-for](http://bit.ly/hb-af-ng-for) | NgFor 지시자 |
 | 4 | [bit.ly/hb-af-ng-switch](http://bit.ly/hb-af-ng-switch) | NgSwitch 지시자 |
