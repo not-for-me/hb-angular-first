@@ -1,12 +1,22 @@
-# 앵귤러 첫걸음 예제 코드
+# [앵귤러 첫걸음](http://www.hanbit.co.kr/store/books/look.php?p_code=B3348481708)
+
+<img src="https://raw.githubusercontent.com/not-for-me/hb-angular-first/master/resources/angular_first_cover.jpg" width="240">
+
+* [온라인 미리보기](https://www.yumpu.com/xx/document/view/58546516)
+
+* [출판사 (한빛미디어)](http://www.hanbit.co.kr/store/books/look.php?p_code=B3348481708)
+* [Yes24](http://www.yes24.com/24/goods/41070512)
+* [알라딘](http://aladin.kr/p/cowyM)
+* [교보문고](http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9788968486807&orderClick=LEA&Kc=)
+* [반디앤루니스](http://www.bandinlunis.com/front/product/detailProduct.do?prodId=4072669)
+* [인터파크](http://book.interpark.com/product/BookDisplay.do?_method=detail&sc.shopNo=0000400000&sc.prdNo=267622241&sc.saNo=003002001&bid1=search&bid2=product&bid3=title&bid4=001)
 
 ## 주요 변경사항 
 1. 3장 예제 책의 코드 변경 ([변경내역](https://github.com/not-for-me/hb-angular-first/commit/7c78fc2f315e9ced3fde740e8bbf41ae2b2cd065)).
     * 3장 `다국어 환영 메시지 서비스` -> `다국어 환영 인사 서비스`
     * 3장 `한글` -> `한국어`
 
-
-## 예제 실행 방법
+## 예제 코드 실행 방법
 * 먼저, 예제의 실행을 위해서는 다음의 도구가 필요합니다.
     1. `npm` 혹은 `yarn` 설치
     1. [앵귤러 CLI](https://github.com/angular/angular-cli) 설치 (`npm -g i @angular/cli`)
