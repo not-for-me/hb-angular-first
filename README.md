@@ -22,7 +22,7 @@
     1. [앵귤러 CLI](https://github.com/angular/angular-cli) 설치 (`npm -g i @angular/cli`)
 
 * 소스를 다운로드 받은 후에 각 프로젝트 폴더에서 패키지 인스톨 후에 예제를 직접 실행해 볼 수 있습니다.
-
+* [참고] 예제 코드 실행방법: [Angular CLI에서 yarn 사용하기](https://youtu.be/FBMTvESUaiU)
 
 ### 예시
 ```
