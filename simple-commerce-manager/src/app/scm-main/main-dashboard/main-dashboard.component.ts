@@ -79,7 +79,10 @@ export class MainDashboardComponent implements OnInit {
         this.pieData.push(result[1]);
         this.pieChartLabels.push(result[0].name);
       })
-      .subscribe(() => this.spinner.stop(), null, () => this.fetchPieChartData = true);
+      .subscribe(null, null, () => {
+        this.spinner.stop();
+        this.fetchPieChartData = true;
+      });
   }
 
 }
