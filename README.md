@@ -11,7 +11,7 @@
 * [반디앤루니스](http://www.bandinlunis.com/front/product/detailProduct.do?prodId=4072669)
 * [인터파크](http://book.interpark.com/product/BookDisplay.do?_method=detail&sc.shopNo=0000400000&sc.prdNo=267622241&sc.saNo=003002001&bid1=search&bid2=product&bid3=title&bid4=001)
 
-## 주요 변경사항 
+## 오탈자 및 오류/변경 사항
 1. 3장 예제 책의 코드 변경 ([변경내역](https://github.com/not-for-me/hb-angular-first/commit/7c78fc2f315e9ced3fde740e8bbf41ae2b2cd065)).
    * 3장 `다국어 환영 메시지 서비스` -> `다국어 환영 인사 서비스`
    * 3장 `한글` -> `한국어`
