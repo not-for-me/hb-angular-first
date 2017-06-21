@@ -28,6 +28,10 @@ const routes: Routes = [{
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
+  providers: [
+    CategoryDetailResolverService,
+    CategoryListResolverService
+  ]
 })
 export class CategoryRoutingModule {
 }
