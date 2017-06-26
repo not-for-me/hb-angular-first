@@ -26,7 +26,7 @@ import { API_URL_TOKEN, API_VER_TOKEN } from './app.tokens';
     HttpModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    MaterialModule.forRoot(),
+    MaterialModule,
     MdToolbarModule,
     MdListModule,
     MdCardModule,
