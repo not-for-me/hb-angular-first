@@ -24,7 +24,7 @@ export class CheckListComponent implements OnInit {
 
   onChecked(isChecked, checkedItem: CheckItem) {
     checkedItem.isChecked = isChecked
-    this.curCheckedItem = checkedItem;
+    this.curCheckedItem = JSON.parse(JSON.stringify(checkedItem));
     this.checkListDataService.checkItem(checkedItem);
   }
 
