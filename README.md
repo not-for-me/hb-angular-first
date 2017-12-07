@@ -12,9 +12,13 @@
 * [인터파크](http://book.interpark.com/product/BookDisplay.do?_method=detail&sc.shopNo=0000400000&sc.prdNo=267622241&sc.saNo=003002001&bid1=search&bid2=product&bid3=title&bid4=001)
 
 ## Angular 5 버전 반영 
-* 최신 버전을 반영한 소스를 `angular-v5` 브랜치에 반영했습니다.
-* 책의 예제와 약간의 차이가 있지만 최신 버전을 확인하고 싶은 분들은 위 브랜치의 코드를 참조해 주세요 
-* 관련 이슈 #19
+* 최신 버전이 반영되었습니다. 
+* 최신 버전은 책의 예제와 약간의 차이가 있습니다. 책의 예제코드는 `ng-v4` 태그의 커밋을 참조해 주세요.
+```
+git checkout ng-v4
+```
+
+* 관련 이슈 [#19](https://github.com/not-for-me/hb-angular-first/issues/19)
 
 ## 오탈자 및 오류/변경 사항
 1. 3장 예제 책의 코드 변경 ([변경내역](https://github.com/not-for-me/hb-angular-first/commit/7c78fc2f315e9ced3fde740e8bbf41ae2b2cd065)).
