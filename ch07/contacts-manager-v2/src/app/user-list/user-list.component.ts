@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MdDialog } from '@angular/material';
+import { MatDialog } from '@angular/material';
 import { Observable } from 'rxjs/Observable';
 import { User, UserDetailService, UserDetailComponent } from './user-detail';
 import { UserListService } from './user-list.service';
@@ -16,7 +16,7 @@ export class UserListComponent implements OnInit {
   constructor(
     private userListService: UserListService,
     private userDetailService: UserDetailService,
-    private dialog: MdDialog
+    private dialog: MatDialog
   ) { }
 
   ngOnInit() {

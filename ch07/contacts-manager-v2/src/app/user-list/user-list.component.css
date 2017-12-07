@@ -7,7 +7,7 @@ div.container {
     width: 80%;
 }
 
-md-list-item {
+mat-list-item {
     border: 1px solid lightslategrey;
     background: white;
 }
