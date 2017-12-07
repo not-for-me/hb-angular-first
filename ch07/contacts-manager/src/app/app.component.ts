@@ -16,8 +16,8 @@ export class AppComponent {
   }
 
   findUser(id) {
-    const onSuccess = res => {
-      const user = res.data;
+    const onSuccess = result => {
+      const user = result;
       this.searchedUser = user;
     };
 
@@ -26,8 +26,8 @@ export class AppComponent {
 
   addUser() {
     const newUser = { name: this.user.name, age: this.user.age };
-    const callback = res => {
-      const newUser: User = res.data;
+    const callback = result => {
+      const newUser: User = result;
       console.log(JSON.stringify(newUser));
       alert(`사용자 생성\nID:${newUser.id}\n이름:${newUser.name}\n나이:${newUser.age}`);
     };
@@ -42,8 +42,8 @@ export class AppComponent {
       return;
     }
 
-    const callback = res => {
-      const newUser: User = res.data;
+    const callback = result => {
+      const newUser: User = result;
       console.log(JSON.stringify(newUser));
       alert(`사용자 변경\nID:${newUser.id}\n이름:${newUser.name}\n나이:${newUser.age}`);
     }

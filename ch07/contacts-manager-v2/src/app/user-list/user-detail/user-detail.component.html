@@ -1,34 +1,34 @@
-<h3 md-dialog-title>{{isAddMode ? '사용자 등록' : '사용자 조회 / 수정'}}</h3>
-<md-dialog-content fxLayout="column" fxLayoutAlign="space-around center">
+<h3 mat-dialog-title>{{isAddMode ? '사용자 등록' : '사용자 조회 / 수정'}}</h3>
+<mat-dialog-content fxLayout="column" fxLayoutAlign="space-around center">
   <div>
-    <md-input-container>
-      <input mdInput placeholder="이름" [(ngModel)]="user.name">
-    </md-input-container>
+    <mat-input-container>
+      <input matInput placeholder="이름" [(ngModel)]="user.name">
+    </mat-input-container>
   </div>
   <div>
-    <md-input-container>
-      <input mdInput placeholder="ID" [(ngModel)]="user.id">
-    </md-input-container>
+    <mat-input-container>
+      <input matInput placeholder="ID" [(ngModel)]="user.id">
+    </mat-input-container>
   </div>
   <div>
-    <md-input-container>
-      <input mdInput placeholder="메일" [(ngModel)]="user.mail">
-    </md-input-container>
+    <mat-input-container>
+      <input matInput placeholder="메일" [(ngModel)]="user.mail">
+    </mat-input-container>
   </div>
   <div>
-    <md-input-container>
-      <input mdInput placeholder="핸드폰" [(ngModel)]="user.phoneNum">
-    </md-input-container>
+    <mat-input-container>
+      <input matInput placeholder="핸드폰" [(ngModel)]="user.phoneNum">
+    </mat-input-container>
   </div>
   <div>
-    <md-radio-group [(ngModel)]="user.sex">
-      <md-radio-button value="M">남성</md-radio-button>
-      <md-radio-button value="F">여성</md-radio-button>
-    </md-radio-group>
+    <mat-radio-group [(ngModel)]="user.sex">
+      <mat-radio-button value="M">남성</mat-radio-button>
+      <mat-radio-button value="F">여성</mat-radio-button>
+    </mat-radio-group>
   </div>
-</md-dialog-content>
+</mat-dialog-content>
 
-<md-dialog-actions fxLayout="row" fxLayoutAlign="space-around center">
-  <button md-button (click)="modifyUser()">{{isAddMode ? '생성하기' : '수정하기'}}</button>
-  <button md-button (click)="closeDialog()">닫기</button>
-</md-dialog-actions>
+<mat-dialog-actions fxLayout="row" fxLayoutAlign="space-around center">
+  <button mat-button (click)="modifyUser()">{{isAddMode ? '생성하기' : '수정하기'}}</button>
+  <button mat-button (click)="closeDialog()">닫기</button>
+</mat-dialog-actions>

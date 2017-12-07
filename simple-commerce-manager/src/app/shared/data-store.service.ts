@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { NoCounterService } from './no-counter.service';
 import { ScmDomain } from "./scm-shared-util";
-import { FirebaseListFactoryOpts } from 'angularfire2/interfaces';
 
 @Injectable()
 export class DataStoreService {
@@ -16,33 +15,21 @@ export class DataStoreService {
       .switchMap(no => this.findObject$(domain, no).set(modelCreatorFn(no)));
   }
 
-  findObject$(domain: ScmDomain, no: number) {
-    return this._findObject(domain, no, false);
+  findObject$<T>(domain: ScmDomain, no: number) {
+    return this.db.object<T>(`/${domain}/${no}`);
   }
 
-  findObjectSnapshot(domain: ScmDomain, no: number) {
-    return this._findObject(domain, no, true).take(1);
+  findList$<T>(domain: ScmDomain) {
+    return this.db.list<T>(`/${domain}`);
   }
 
-  findList$(domain: ScmDomain) {
-    return this.db.list(`/${domain}`);
+  findList$ByQuery<T>(domain: ScmDomain, queryKey: string, queryVal: any) {
+    return this.db.list<T>(`/${domain}`, ref => ref.orderByChild(queryKey).equalTo(queryVal));
   }
 
-  findList$ByQuery(domain: ScmDomain, queryKey: string, queryVal: any) {
-    const option: FirebaseListFactoryOpts = { query: { orderByChild: queryKey, equalTo: queryVal } };
-    return this._findListByOpt(domain, option).take(1);
-  }
-
-  findList$ByPage(domain: ScmDomain, pageNo, pageSize, totalCnt) {
+  findList$ByPage<T>(domain: ScmDomain, pageNo, pageSize, totalCnt) {
     const offset = totalCnt - pageSize * (pageNo - 1);
-    const option: FirebaseListFactoryOpts = {
-      query: {
-        orderByChild: 'no',
-        endAt: offset,
-        limitToLast: pageSize
-      }
-    };
-    return this._findListByOpt(domain, option);
+    return this.db.list<T>(`/${domain}`, ref => ref.orderByChild('no').endAt(offset).limitToLast(pageSize)).snapshotChanges();
   }
 
   update(domain: ScmDomain, model: any) {
@@ -51,16 +38,5 @@ export class DataStoreService {
 
   count(domain: ScmDomain) {
     return this.counter.get(domain);
-  }
-
-  private _findObject(domain: ScmDomain, no: number, isSnapshot: boolean) {
-    if (isSnapshot) {
-      return this.db.object(`/${domain}/${no}`, { preserveSnapshot: true });
-    }
-    return this.db.object(`/${domain}/${no}`);
-  }
-
-  private _findListByOpt(domain: ScmDomain, option: FirebaseListFactoryOpts) {
-    return this.db.list(`/${domain}`, option);
   }
 }

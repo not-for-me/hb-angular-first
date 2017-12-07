@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MdDialogRef, MdSnackBar } from '@angular/material';
+import { MatDialogRef, MatSnackBar } from '@angular/material';
 import { User } from './user.model';
 import { UserDetailService } from './user-detail.service';
 
@@ -15,8 +15,8 @@ export class UserDetailComponent implements OnInit {
 
     constructor(
         private userDetailService: UserDetailService,
-        private dialogRef: MdDialogRef<UserDetailComponent>,
-        private snackBar: MdSnackBar
+        private dialogRef: MatDialogRef<UserDetailComponent>,
+        private snackBar: MatSnackBar
     ) { }
 
     ngOnInit() {

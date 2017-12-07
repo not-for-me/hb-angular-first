@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdToolbarModule, MdSnackBarModule, MdCardModule, MdInputModule, MdRadioModule, MdButtonModule } from '@angular/material';
+import { MatToolbarModule, MatSnackBarModule, MatCardModule, MatInputModule, MatRadioModule, MatButtonModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { WelcomeMsgComponent } from './welcome-msg/welcome-msg.component';
@@ -24,7 +24,7 @@ import { LangSelectorBtnPipe } from './lang-selector/lang-selector-btn.pipe';
     FormsModule,
     HttpModule,
     BrowserAnimationsModule,
-    MdToolbarModule, MdSnackBarModule, MdCardModule, MdInputModule, MdRadioModule, MdButtonModule
+    MatToolbarModule, MatSnackBarModule, MatCardModule, MatInputModule, MatRadioModule, MatButtonModule
   ],
   providers: [I18nSupportService],
   bootstrap: [AppComponent]

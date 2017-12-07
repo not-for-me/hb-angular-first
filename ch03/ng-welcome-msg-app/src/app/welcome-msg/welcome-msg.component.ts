@@ -1,6 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { I18nSupportService } from '../i18n-support.service';
-import { MdSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-welcome-msg',
@@ -13,7 +13,7 @@ export class WelcomeMsgComponent implements AfterViewInit {
   private valid = false;
   private static CHK_KEYUP_WAIT_SEC = 5000;
 
-  constructor(public i18nSupporter: I18nSupportService, private snackbar: MdSnackBar) { }
+  constructor(public i18nSupporter: I18nSupportService, private snackbar: MatSnackBar) { }
 
   ngAfterViewInit() {
     const checkTouchedFn = () => {

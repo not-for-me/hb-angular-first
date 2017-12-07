@@ -36,11 +36,11 @@ export class MainDashboardComponent implements OnInit {
     this.spinner.start();
 
     const waitForSale$ = this.database.findList$ByQuery('product', 'status', ProdStatus.WAIT_FOR_SALE)
-      .map(r => r.length);
+      .snapshotChanges().map(r => r.length);
     const onSale$ = this.database.findList$ByQuery('product', 'status', ProdStatus.ON_SALE)
-      .map(r => r.length);
+      .snapshotChanges().map(r => r.length);
     const notForSale$ = this.database.findList$ByQuery('product', 'status', ProdStatus.NOT_FOR_SALE)
-      .map(r => r.length);
+      .snapshotChanges().map(r => r.length);
 
     Observable.zip(waitForSale$, onSale$, notForSale$)
       .do(statData => this.makeBarChartDataset(statData))
@@ -67,12 +67,15 @@ export class MainDashboardComponent implements OnInit {
 
   private makePieChart() {
     this.spinner.start();
-    this.database.findList$('category')
+    this.database.findList$<Category>('category')
+      .snapshotChanges()
       .take(1)
-      .mergeMap((cats: Categories) => Observable.from(cats))
+      .mergeMap(actions =>  Observable.from(actions).map(action => action.payload.val()))
       .filter(cat => cat.isUse)
       .mergeMap(cat =>
         this.database.findList$ByQuery('product', 'catNo', cat.no.toString())
+          .snapshotChanges()
+          .take(1)
           .map(products => [cat, products.length])
       )
       .do(result => {

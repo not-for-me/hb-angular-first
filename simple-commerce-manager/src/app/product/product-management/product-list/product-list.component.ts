@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Inject, OnDestroy } from '@angular/core';
-import { Products } from "../../product.model";
+import { Product, Products } from "../../product.model";
 import { Observable } from "rxjs/Observable";
 import { ActivatedRoute  } from "@angular/router";
 import { PROD_LIST_PAGE_SIZE } from "../../product.tokens";
@@ -74,8 +74,9 @@ export class ProductListComponent implements OnInit, OnDestroy {
   }
 
   getPagedList() {
-    this.database.findList$ByPage('product', this.pageNo, this.pageSize, this.totalItemCnt)
-      .map((list: Products) => list.sort((p1, p2) => p2.no - p1.no))
+    this.database.findList$ByPage<Product>('product', this.pageNo, this.pageSize, this.totalItemCnt)
+      .map(actions => actions.map(action => action.payload.val()))
+      .do((list: Products) => list.sort((p1, p2) => p2.no - p1.no))
       .subscribe(list => this.products = list);
   }
 

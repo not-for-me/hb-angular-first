@@ -4,7 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule, BaseRequestOptions, Headers, RequestOptions } from '@angular/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MaterialModule, MdToolbarModule, MdListModule, MdCardModule, MdDialogModule, MdSnackBarModule } from '@angular/material';
+import { MatMenuModule, MatIconModule, MatInputModule, MatRadioModule, MatButtonModule,
+  MatToolbarModule, MatListModule, MatCardModule, MatDialogModule, MatSnackBarModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { UserListComponent, UserListService, UserDetailComponent, UserDetailService } from './user-list';
 import { MyApiGatewayService } from './my-api-gateway.service';
@@ -26,12 +27,16 @@ import { API_URL_TOKEN, API_VER_TOKEN } from './app.tokens';
     HttpModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    MaterialModule,
-    MdToolbarModule,
-    MdListModule,
-    MdCardModule,
-    MdDialogModule,
-    MdSnackBarModule
+    MatMenuModule,
+    MatIconModule,
+    MatInputModule,
+    MatRadioModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatListModule,
+    MatCardModule,
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [
     UserListService,
