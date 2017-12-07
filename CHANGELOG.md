@@ -1,5 +1,10 @@
 # 주요 변경사항
 
+## (2017-12-07) 버전 최신화
+* Angular를 포함 대부분의 dependency 버전을 최신화하였습니다. 
+* 최신 버전은 다음 브랜치를 사용하면 됩니다.
+`https://github.com/not-for-me/hb-angular-first/tree/angular-v5`
+
 ## (2017-07-24) Material2 버전 호환성 반영
 * Material2 의 beta.8에 cdk 패키지가 의존성으로 추가됨 [링크](https://github.com/angular/material2/blob/master/CHANGELOG.md)
 * 3장, 7장 예제의 material 버전 변경 및 Angular CLI 버전도 명시적으로 최신화
