@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
-import { Categories } from '../category.model';
+import { Category, Categories } from '../category.model';
 import { DataStoreService } from '../../shared/data-store.service';
 import { CAT_LIST_PAGE_SIZE } from '../category.tokens';
 
@@ -32,7 +32,8 @@ export class CategoryManagementComponent implements OnInit {
   }
 
   getPagedList() {
-    this.database.findList$ByPage('category', this.pageNo, this.pageSize, this.totalItemCnt)
+    this.database.findList$ByPage<Category>('category', this.pageNo, this.pageSize, this.totalItemCnt)
+      .map(actions => actions.map(action => action.payload.val()))
       .do((list: Categories) => list.sort((p1, p2) => p2.no - p1.no))
       .subscribe(cats => this.categories = cats);
   }

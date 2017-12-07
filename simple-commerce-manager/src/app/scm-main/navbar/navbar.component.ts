@@ -5,6 +5,7 @@ import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/Observable';
 import { DataStoreService } from '../../shared/data-store.service';
 import { ToastsManager } from 'ng2-toastr';
+import { Product } from 'app/product/product.model';
 
 @Component({
   selector: 'scm-navbar',
@@ -34,9 +35,10 @@ export class NavbarComponent implements OnInit {
   }
 
   searchProduct(no: number) {
-    this.dataStoreService.findObject$('product', no)
+    this.dataStoreService.findObject$<Product>('product', no).valueChanges()
       .subscribe(obj => {
-        if (obj.$exists()) {
+        debugger;
+        if (obj) {
           this.router.navigate(['product-list', 'product', no], { queryParams: { 'action': 'edit' } });
         } else  {
           this.toastr.warning('상품 정보가 없습니다.');

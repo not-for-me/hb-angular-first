@@ -9,7 +9,8 @@ export class NoCounterService {
   constructor(private db: AngularFireDatabase) { }
 
   get(domain: ScmDomain): Observable<number> {
-    return this._getNumber$(domain).map(o => o.$value || 0);
+    return this._getNumber$(domain).snapshotChanges()
+      .map(action => action.payload.val() || 0);
   }
 
   incAndGet(domain: ScmDomain): Observable<number> {
@@ -23,8 +24,7 @@ export class NoCounterService {
         id$.complete();
       }
     };
-    this._getNumber$(domain).$ref.transaction(num => (num || 0) + 1, onComplete);
-
+    this.db.object(`/numbers/${domain}`).query.ref.transaction(num => (num || 0) + 1, onComplete);
     return id$;
   }
 

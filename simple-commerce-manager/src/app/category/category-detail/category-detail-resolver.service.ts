@@ -3,6 +3,8 @@ import { Resolve, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from "@a
 import { Category } from "../category.model";
 import { DataStoreService } from "../../shared/data-store.service";
 import * as firebase from 'firebase/app';
+import { debug } from 'util';
+import { snapshotChanges } from 'angularfire2/database';
 
 @Injectable()
 export class CategoryDetailResolverService implements Resolve<Category> {
@@ -11,13 +13,15 @@ export class CategoryDetailResolverService implements Resolve<Category> {
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    if ( route.queryParams['action'] === 'create' ) return null;
+    if (route.queryParams['action'] === 'create') return null;
 
     return this.database
-      .findObjectSnapshot('category', route.params['no'])
-      .map((snapshot: firebase.database.DataSnapshot) => {
-        if ( snapshot.exists() ) {
-          return snapshot.val();
+      .findObject$<Category>('category', route.params['no'])
+      .snapshotChanges()
+      .take(1)
+      .map(action => {
+        if (action.payload.val()) {
+          return action.payload.val();
         }
 
         this.router.navigate(['/category-list']);

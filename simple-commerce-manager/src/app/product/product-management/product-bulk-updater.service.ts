@@ -31,9 +31,9 @@ export class ProductBulkUpdaterService {
 
   private _bulkUpdate(updateFn: (Product) => Product) {
     const update$ = this.prodSet.nos$()
-      .mergeMap(no => this.database.findObjectSnapshot('product', no))
-      .map((d: firebase.database.DataSnapshot) => {
-        if(d.exists()) return d.val();
+      .mergeMap(no => this.database.findObject$<Product>('product', no).snapshotChanges().take(1))
+      .map(action  => {
+        if(action.payload.val()) return action.payload.val();
         throw new Error('failed to fetch value');
       })
       .do(updateFn)
@@ -45,8 +45,9 @@ export class ProductBulkUpdaterService {
     return this.handleBulkUpdate$(update$);
   }
 
-  private handleBulkUpdate$(update$: Observable<UpdateResult>) {
+  private handleBulkUpdate$(update$: Observable<any>) {
     return update$.reduce((acc, r: UpdateResult) => {
+      console.log(r[0]);
       if ( r[0] ) {
         acc.success.push(r[1])
       } else {
