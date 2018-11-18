@@ -1,8 +1,8 @@
 <mat-card>
   <div class="contents">
-    <mat-input-container>
+    <mat-form-field>
       <input matInput name="value" placeholder="사용자 이름" [(ngModel)]="userName" (ngModelChange)="onChange()">
-    </mat-input-container>
+    </mat-form-field>
     <button mat-raised-button (click)="showWelcomeMsg()">입력</button>
     <span class="welcome-msg">{{welcomeMsg}}</span>
   </div>
