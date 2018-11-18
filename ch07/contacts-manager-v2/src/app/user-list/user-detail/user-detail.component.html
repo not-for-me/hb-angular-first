@@ -1,24 +1,24 @@
 <h3 mat-dialog-title>{{isAddMode ? '사용자 등록' : '사용자 조회 / 수정'}}</h3>
 <mat-dialog-content fxLayout="column" fxLayoutAlign="space-around center">
   <div>
-    <mat-input-container>
+    <mat-form-field>
       <input matInput placeholder="이름" [(ngModel)]="user.name">
-    </mat-input-container>
+    </mat-form-field>
   </div>
   <div>
-    <mat-input-container>
+    <mat-form-field>
       <input matInput placeholder="ID" [(ngModel)]="user.id">
-    </mat-input-container>
+    </mat-form-field>
   </div>
   <div>
-    <mat-input-container>
+    <mat-form-field>
       <input matInput placeholder="메일" [(ngModel)]="user.mail">
-    </mat-input-container>
+    </mat-form-field>
   </div>
   <div>
-    <mat-input-container>
+    <mat-form-field>
       <input matInput placeholder="핸드폰" [(ngModel)]="user.phoneNum">
-    </mat-input-container>
+    </mat-form-field>
   </div>
   <div>
     <mat-radio-group [(ngModel)]="user.sex">

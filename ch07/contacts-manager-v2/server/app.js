@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(bodyParser.json());
 
-const PORT_NUM = 3000;
+const PORT_NUM = 3001;
 const apiPrefix = '/api/v1';
 const API_KEY_HEADER_NAME = 'X-My-Api-Token';
 const TEST_KEY = 'angular-is-awesome';
