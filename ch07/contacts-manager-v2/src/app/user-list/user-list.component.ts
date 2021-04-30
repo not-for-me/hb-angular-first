@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material';
-import { Observable } from 'rxjs/Observable';
+import { MatDialog } from '@angular/material/dialog';
+import { switchMap } from 'rxjs/operators';
 import { User, UserDetailService, UserDetailComponent } from './user-detail';
 import { UserListService } from './user-list.service';
 
@@ -20,7 +20,7 @@ export class UserListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.fetchAllUserSummary().subscribe(res => this.userSummaries = res);
+    this.fetchAllUserSummary().subscribe(res => this.handleUserSummaryResponse(res));
   }
 
   fetchAllUserSummary() {
@@ -32,20 +32,29 @@ export class UserListComponent implements OnInit {
     this.selectedUserNo = no;
   }
 
+  handleUserSummaryResponse(response) {
+    console.log(JSON.stringify(response))
+    this.userSummaries = response
+  }
+
   getUserDetailDialog(no: number) {
     const dialogRef = this.dialog.open(UserDetailComponent, { width: '20%' });
     dialogRef.componentInstance.isAddMode = false;
     dialogRef.componentInstance.userNo = no;
     dialogRef.afterClosed()
-      .switchMap(() => this.fetchAllUserSummary())
-      .subscribe(res => this.userSummaries = res);
+      .pipe(
+        switchMap(() => this.fetchAllUserSummary())
+      )
+      .subscribe(res => this.handleUserSummaryResponse(res));
   }
 
   removeUser() {
     console.log(this.selectedUserNo);
     this.userDetailService.removeUser(this.selectedUserNo)
-      .switchMap(() => this.fetchAllUserSummary())
-      .subscribe(res => this.userSummaries = res);
+      .pipe(
+        switchMap(() => this.fetchAllUserSummary())
+      )
+      .subscribe(res => this.handleUserSummaryResponse(res));
   }
 
   addUser() {
@@ -53,7 +62,9 @@ export class UserListComponent implements OnInit {
     dialogRef.componentInstance.isAddMode = true;
     dialogRef.componentInstance.userNo = 0;
     dialogRef.afterClosed()
-      .switchMap(() => this.fetchAllUserSummary())
-      .subscribe(res => this.userSummaries = res);
+      .pipe(
+        switchMap(() => this.fetchAllUserSummary())
+      )
+      .subscribe(res => this.handleUserSummaryResponse(res));
   }
 }
