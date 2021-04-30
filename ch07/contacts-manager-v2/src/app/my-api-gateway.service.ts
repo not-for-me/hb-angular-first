@@ -1,9 +1,7 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, Inject } from '@angular/core';
-import { Http, Request, RequestOptionsArgs, Response, ResponseContentType, BaseRequestOptions, Headers, RequestMethod } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
+import { map } from 'rxjs/operators';
 import { API_URL_TOKEN, API_VER_TOKEN } from './app.tokens';
-
-const JSON_MAPPER_FN = res => res.json();
 
 const errorHandler = (res) => {
   return null;
@@ -11,9 +9,9 @@ const errorHandler = (res) => {
 
 @Injectable()
 export class MyApiGatewayService {
-  reqOptions: RequestOptionsArgs = {};
+  reqOptions = {};
 
-  constructor(private _http: Http,
+  constructor(private _http: HttpClient,
     @Inject(API_VER_TOKEN) public apiVer: string,
     @Inject(API_URL_TOKEN) public apiUrl: string
   ) {
@@ -21,15 +19,15 @@ export class MyApiGatewayService {
   }
 
   makeDefaultHttpOption() {
-    const headers = new Headers();
-    headers.set('X-My-Api-Token', 'angular-is-awesome');
-    this.reqOptions.headers = headers;
+    let headers = new HttpHeaders();
+    headers = headers.set('X-My-Api-Token', 'angular-is-awesome');
+    this.reqOptions = { headers: headers }
+    debugger;
   }
 
-  get(url: string) {
+  get<T>(url: string) {
     return this._http
-      .get(`${this.apiUrl}/${this.apiVer}/${url}`, this.reqOptions)
-      .map(JSON_MAPPER_FN)
+      .get<T>(`${this.apiUrl}/${this.apiVer}/${url}`, this.reqOptions);
   }
 
   post(url: string, data: any) {

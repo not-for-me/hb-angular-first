@@ -2,18 +2,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpModule, BaseRequestOptions, Headers, RequestOptions } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatMenuModule, MatIconModule, MatInputModule, MatRadioModule, MatButtonModule,
-  MatToolbarModule, MatListModule, MatCardModule, MatDialogModule, MatSnackBarModule } from '@angular/material';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 import { AppComponent } from './app.component';
 import { UserListComponent, UserListService, UserDetailComponent, UserDetailService } from './user-list';
 import { MyApiGatewayService } from './my-api-gateway.service';
 import { API_URL_TOKEN, API_VER_TOKEN } from './app.tokens';
-
-// export class MyRequestOptions extends BaseRequestOptions {
-//   headers = headerInfo;
-// }
 
 @NgModule({
   declarations: [
@@ -24,7 +29,7 @@ import { API_URL_TOKEN, API_VER_TOKEN } from './app.tokens';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatMenuModule,
@@ -45,7 +50,6 @@ import { API_URL_TOKEN, API_VER_TOKEN } from './app.tokens';
     { provide: API_URL_TOKEN, useValue: '/api' },
     { provide: API_VER_TOKEN, useValue: 'v1' }
   ],
-  // {provide: RequestOptions, useClass: MyRequestOptions}],
   bootstrap: [AppComponent],
   entryComponents: [UserDetailComponent]
 })
